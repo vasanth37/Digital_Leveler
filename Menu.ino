@@ -277,15 +277,16 @@ void executeAction6(int op6){
   {
     case 1:
      Serial.println("Yes");
-     display(15,20,"Resetting the WiFi");
+     display(15,35,"Resetting the WiFi");
      launchWeb();
      setupAP();
-     display(15,20,"Open 192.168.4.1");
+     display(15,35,"Open 192.168.4.1");
      while ((WiFi.status() != WL_CONNECTED)) 
      {
         Serial.print(".");
         server.handleClient();
      }
+     display(20,35,"WiFi Connected");
      DISPLAY_LABEL = HIGH;
      WIFI_RESET_LABEL = LOW;
      MENU_LABEL = LOW;
@@ -412,6 +413,7 @@ void executeAction2(int op2){
       ALARM_LABEL = LOW;
       DISPLAY_LABEL = HIGH;
       ALARM_LABEL_OPTION = LOW;
+      m = 0;
       Serial.println("ALARM_LABEL = LOW");
       break;
   }

@@ -345,14 +345,18 @@ void angleSetOptionDisplay()
 {
   u8g2.clearBuffer();					              // clear the internal memory
   u8g2.setFont(u8g2_font_ncenB14_tr);      	// choose a suitable font
-  u8g2.setCursor(45, 40); // Set cursor position
+  u8g2.setCursor(40, 35); // Set cursor position
   for (int i = 0; i < sizeof(alarm)/sizeof(alarm[0]); i++, ptr[i])
-   {
-      u8g2.print(ptr[i]); // Print each integer element of the array
-      u8g2.print(" "); // Print a space between elements
-   }
-   u8g2.setFont(u8g2_font_ncenB08_tr);
-   u8g2.setCursor(55, 55); // Set cursor position
-   u8g2.print("Set Alarm");
-   u8g2.sendBuffer();
+  {
+    
+    u8g2.print(ptr[i]); // Print each integer element of the array
+    u8g2.print(" "); // Print a space between elements
+  }
+  if(m == 0)  u8g2.drawFrame(38,18,15,20);
+  if(m == 1)  u8g2.drawFrame(54,18,15,20);
+  if(m == 2)  u8g2.drawFrame(70,18,15,20);
+  u8g2.setFont(u8g2_font_ncenB08_tr);
+  u8g2.setCursor(35, 60); // Set cursor position
+  u8g2.print("Set Alarm");
+  u8g2.sendBuffer();
 }

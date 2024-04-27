@@ -179,7 +179,7 @@ void createWebServer()
   if (testWiFi())
   {
     Serial.println("Succesfully Connected!!!");
-    display(35, 20, "WiFi Connected");
+    //display(35, 20, "WiFi Connected");
   }
   else
   {

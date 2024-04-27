@@ -69,7 +69,7 @@ ICACHE_RAM_ATTR void downButtonPressed(){
         if(ptr[2] > 0) ptr[2]--;
       }
     }
-    if(!(SELECT_DEGREE_LABEL || WIFI_RESET_LABEL || ANGLE_RESET_OPTION_LABEL || LOG_LABEL_OPTION || ALARM_LABEL_OPTION))
+    if(!(SELECT_DEGREE_LABEL || WIFI_RESET_LABEL || ANGLE_RESET_OPTION_LABEL || LOG_LABEL_OPTION || ALARM_LABEL_OPTION) && !(LOG_LABEL))
     {
       HOLD_COUNT++;
       Serial.println("Hold Pressed");
